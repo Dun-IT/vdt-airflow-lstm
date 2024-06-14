@@ -1,0 +1,8 @@
+vnstock
+numpy
+scikit-learn
+pandas
+matplotlib
+keras
+tensorflow
+scikeras

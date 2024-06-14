@@ -1,0 +1,48 @@
+[2024-06-13T10:47:45.082+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-13T10:47:45.099+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.describe_data_task manual__2024-06-13T10:47:27.609014+00:00 [queued]>
+[2024-06-13T10:47:45.106+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.describe_data_task manual__2024-06-13T10:47:27.609014+00:00 [queued]>
+[2024-06-13T10:47:45.107+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-13T10:47:45.120+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): describe_data_task> on 2024-06-13 10:47:27.609014+00:00
+[2024-06-13T10:47:45.128+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=13248) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-13T10:47:45.129+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'describe_data_task', 'manual__2024-06-13T10:47:27.609014+00:00', '--job-id', '448', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmp_1frhkr7']
+[2024-06-13T10:47:45.129+0000] {standard_task_runner.py:63} INFO - Started process 13266 to run task
+[2024-06-13T10:47:45.130+0000] {standard_task_runner.py:91} INFO - Job 448: Subtask describe_data_task
+[2024-06-13T10:47:45.166+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.describe_data_task manual__2024-06-13T10:47:27.609014+00:00 [running]> on host 33b4ab31339c
+[2024-06-13T10:47:45.232+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='describe_data_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T10:47:27.609014+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-13T10:47:27.609014+00:00'
+[2024-06-13T10:47:45.234+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-13T10:47:45.256+0000] {logging_mixin.py:188} INFO - Kích thước dữ liệu:
+[2024-06-13T10:47:45.257+0000] {logging_mixin.py:188} INFO - (2604, 5)
+[2024-06-13T10:47:45.263+0000] {logging_mixin.py:188} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2604 entries, 0 to 2603
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype         
+---  ------  --------------  -----         
+ 0   time    2604 non-null   datetime64[ns]
+ 1   open    2604 non-null   int64         
+ 2   high    2604 non-null   int64         
+ 3   low     2604 non-null   int64         
+ 4   close   2604 non-null   int64         
+dtypes: datetime64[ns](1), int64(4)
+memory usage: 101.8 KB
+[2024-06-13T10:47:45.263+0000] {logging_mixin.py:188} INFO - Thông tin dữ liệu:
+[2024-06-13T10:47:45.264+0000] {logging_mixin.py:188} INFO - None
+[2024-06-13T10:47:45.271+0000] {logging_mixin.py:188} INFO - Mô tả bộ dữ liệu:
+[2024-06-13T10:47:45.279+0000] {logging_mixin.py:188} INFO -                                 time  ...          close
+count                           2604  ...    2604.000000
+mean   2019-03-28 08:42:01.658986240  ...   70434.268049
+min              2014-01-02 00:00:00  ...   30720.000000
+25%              2016-08-18 18:00:00  ...   62810.000000
+50%              2019-03-30 12:00:00  ...   73205.000000
+75%              2021-11-02 06:00:00  ...   82317.500000
+max              2024-06-13 00:00:00  ...  115950.000000
+std                              NaN  ...   19148.184072
+
+[8 rows x 5 columns]
+[2024-06-13T10:47:45.280+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-13T10:47:45.280+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-13T10:47:45.287+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_prediction, task_id=describe_data_task, run_id=manual__2024-06-13T10:47:27.609014+00:00, execution_date=20240613T104727, start_date=20240613T104745, end_date=20240613T104745
+[2024-06-13T10:47:45.345+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-13T10:47:45.382+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-13T10:47:45.385+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

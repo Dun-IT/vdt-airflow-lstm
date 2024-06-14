@@ -1,0 +1,172 @@
+[2024-06-13T02:29:23.706+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-13T02:29:23.761+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.train_model_task manual__2024-06-13T02:27:53.651829+00:00 [queued]>
+[2024-06-13T02:29:23.779+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.train_model_task manual__2024-06-13T02:27:53.651829+00:00 [queued]>
+[2024-06-13T02:29:23.781+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-13T02:29:23.815+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_model_task> on 2024-06-13 02:27:53.651829+00:00
+[2024-06-13T02:29:23.837+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2563) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-13T02:29:23.841+0000] {standard_task_runner.py:63} INFO - Started process 2588 to run task
+[2024-06-13T02:29:23.841+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'train_model_task', 'manual__2024-06-13T02:27:53.651829+00:00', '--job-id', '312', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmp1beean3u']
+[2024-06-13T02:29:23.844+0000] {standard_task_runner.py:91} INFO - Job 312: Subtask train_model_task
+[2024-06-13T02:29:23.949+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.train_model_task manual__2024-06-13T02:27:53.651829+00:00 [running]> on host 33b4ab31339c
+[2024-06-13T02:29:24.153+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='train_model_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T02:27:53.651829+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-13T02:27:53.651829+00:00'
+[2024-06-13T02:29:24.156+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-13T02:29:24.214+0000] {logging_mixin.py:188} INFO - x_train và y_train đã được lưu vào /opt/***/data
+[2024-06-13T02:29:24.348+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/keras/src/layers/rnn/rnn.py:204: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+
+[2024-06-13T02:29:24.917+0000] {logging_mixin.py:188} INFO - Epoch 1/37
+[2024-06-13T02:29:36.790+0000] {logging_mixin.py:188} INFO - 
+Epoch 1: loss improved from inf to 0.04375, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:29:37.041+0000] {logging_mixin.py:188} INFO - 163/163 - 12s - 74ms/step - loss: 0.0437
+[2024-06-13T02:29:37.045+0000] {logging_mixin.py:188} INFO - Epoch 2/37
+[2024-06-13T02:29:40.771+0000] {logging_mixin.py:188} INFO - 
+Epoch 2: loss improved from 0.04375 to 0.02810, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:29:40.910+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 24ms/step - loss: 0.0281
+[2024-06-13T02:29:40.913+0000] {logging_mixin.py:188} INFO - Epoch 3/37
+[2024-06-13T02:29:45.263+0000] {logging_mixin.py:188} INFO - 
+Epoch 3: loss did not improve from 0.02810
+[2024-06-13T02:29:45.266+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 27ms/step - loss: 0.0289
+[2024-06-13T02:29:45.270+0000] {logging_mixin.py:188} INFO - Epoch 4/37
+[2024-06-13T02:29:50.477+0000] {logging_mixin.py:188} INFO - 
+Epoch 4: loss improved from 0.02810 to 0.02665, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:29:50.817+0000] {logging_mixin.py:188} INFO - 163/163 - 6s - 34ms/step - loss: 0.0266
+[2024-06-13T02:29:50.820+0000] {logging_mixin.py:188} INFO - Epoch 5/37
+[2024-06-13T02:29:54.994+0000] {logging_mixin.py:188} INFO - 
+Epoch 5: loss did not improve from 0.02665
+[2024-06-13T02:29:54.997+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0277
+[2024-06-13T02:29:55.000+0000] {logging_mixin.py:188} INFO - Epoch 6/37
+[2024-06-13T02:29:58.714+0000] {logging_mixin.py:188} INFO - 
+Epoch 6: loss improved from 0.02665 to 0.02484, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:29:58.846+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 24ms/step - loss: 0.0248
+[2024-06-13T02:29:58.849+0000] {logging_mixin.py:188} INFO - Epoch 7/37
+[2024-06-13T02:30:03.083+0000] {logging_mixin.py:188} INFO - 
+Epoch 7: loss did not improve from 0.02484
+[2024-06-13T02:30:03.086+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0249
+[2024-06-13T02:30:03.088+0000] {logging_mixin.py:188} INFO - Epoch 8/37
+[2024-06-13T02:30:07.839+0000] {logging_mixin.py:188} INFO - 
+Epoch 8: loss improved from 0.02484 to 0.02274, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:30:08.006+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 30ms/step - loss: 0.0227
+[2024-06-13T02:30:08.009+0000] {logging_mixin.py:188} INFO - Epoch 9/37
+[2024-06-13T02:30:11.928+0000] {logging_mixin.py:188} INFO - 
+Epoch 9: loss did not improve from 0.02274
+[2024-06-13T02:30:11.931+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 24ms/step - loss: 0.0229
+[2024-06-13T02:30:11.934+0000] {logging_mixin.py:188} INFO - Epoch 10/37
+[2024-06-13T02:30:16.037+0000] {logging_mixin.py:188} INFO - 
+Epoch 10: loss did not improve from 0.02274
+[2024-06-13T02:30:16.040+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 25ms/step - loss: 0.0233
+[2024-06-13T02:30:16.043+0000] {logging_mixin.py:188} INFO - Epoch 11/37
+[2024-06-13T02:30:20.266+0000] {logging_mixin.py:188} INFO - 
+Epoch 11: loss improved from 0.02274 to 0.02137, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:30:20.583+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 28ms/step - loss: 0.0214
+[2024-06-13T02:30:20.587+0000] {logging_mixin.py:188} INFO - Epoch 12/37
+[2024-06-13T02:30:24.786+0000] {logging_mixin.py:188} INFO - 
+Epoch 12: loss improved from 0.02137 to 0.02102, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:30:24.971+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 27ms/step - loss: 0.0210
+[2024-06-13T02:30:24.974+0000] {logging_mixin.py:188} INFO - Epoch 13/37
+[2024-06-13T02:30:29.182+0000] {logging_mixin.py:188} INFO - 
+Epoch 13: loss did not improve from 0.02102
+[2024-06-13T02:30:29.185+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0223
+[2024-06-13T02:30:29.188+0000] {logging_mixin.py:188} INFO - Epoch 14/37
+[2024-06-13T02:30:33.437+0000] {logging_mixin.py:188} INFO - 
+Epoch 14: loss did not improve from 0.02102
+[2024-06-13T02:30:33.440+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0211
+[2024-06-13T02:30:33.442+0000] {logging_mixin.py:188} INFO - Epoch 15/37
+[2024-06-13T02:30:38.618+0000] {logging_mixin.py:188} INFO - 
+Epoch 15: loss improved from 0.02102 to 0.02002, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:30:38.802+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 33ms/step - loss: 0.0200
+[2024-06-13T02:30:38.806+0000] {logging_mixin.py:188} INFO - Epoch 16/37
+[2024-06-13T02:30:47.851+0000] {logging_mixin.py:188} INFO - 
+Epoch 16: loss improved from 0.02002 to 0.01881, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:30:48.051+0000] {logging_mixin.py:188} INFO - 163/163 - 9s - 57ms/step - loss: 0.0188
+[2024-06-13T02:30:48.054+0000] {logging_mixin.py:188} INFO - Epoch 17/37
+[2024-06-13T02:30:52.738+0000] {logging_mixin.py:188} INFO - 
+Epoch 17: loss improved from 0.01881 to 0.01853, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:30:52.890+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 30ms/step - loss: 0.0185
+[2024-06-13T02:30:52.893+0000] {logging_mixin.py:188} INFO - Epoch 18/37
+[2024-06-13T02:30:57.071+0000] {logging_mixin.py:188} INFO - 
+Epoch 18: loss did not improve from 0.01853
+[2024-06-13T02:30:57.074+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0190
+[2024-06-13T02:30:57.077+0000] {logging_mixin.py:188} INFO - Epoch 19/37
+[2024-06-13T02:31:01.438+0000] {logging_mixin.py:188} INFO - 
+Epoch 19: loss did not improve from 0.01853
+[2024-06-13T02:31:01.441+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 27ms/step - loss: 0.0195
+[2024-06-13T02:31:01.444+0000] {logging_mixin.py:188} INFO - Epoch 20/37
+[2024-06-13T02:31:06.081+0000] {logging_mixin.py:188} INFO - 
+Epoch 20: loss improved from 0.01853 to 0.01803, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:31:06.341+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 30ms/step - loss: 0.0180
+[2024-06-13T02:31:06.345+0000] {logging_mixin.py:188} INFO - Epoch 21/37
+[2024-06-13T02:31:10.704+0000] {logging_mixin.py:188} INFO - 
+Epoch 21: loss improved from 0.01803 to 0.01775, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:31:10.983+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 28ms/step - loss: 0.0178
+[2024-06-13T02:31:10.986+0000] {logging_mixin.py:188} INFO - Epoch 22/37
+[2024-06-13T02:31:15.171+0000] {logging_mixin.py:188} INFO - 
+Epoch 22: loss improved from 0.01775 to 0.01720, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:31:15.313+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 27ms/step - loss: 0.0172
+[2024-06-13T02:31:15.317+0000] {logging_mixin.py:188} INFO - Epoch 23/37
+[2024-06-13T02:31:19.278+0000] {logging_mixin.py:188} INFO - 
+Epoch 23: loss did not improve from 0.01720
+[2024-06-13T02:31:19.281+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 24ms/step - loss: 0.0181
+[2024-06-13T02:31:19.283+0000] {logging_mixin.py:188} INFO - Epoch 24/37
+[2024-06-13T02:31:23.814+0000] {logging_mixin.py:188} INFO - 
+Epoch 24: loss did not improve from 0.01720
+[2024-06-13T02:31:23.818+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 28ms/step - loss: 0.0175
+[2024-06-13T02:31:23.820+0000] {logging_mixin.py:188} INFO - Epoch 25/37
+[2024-06-13T02:31:28.327+0000] {logging_mixin.py:188} INFO - 
+Epoch 25: loss did not improve from 0.01720
+[2024-06-13T02:31:28.330+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 28ms/step - loss: 0.0179
+[2024-06-13T02:31:28.332+0000] {logging_mixin.py:188} INFO - Epoch 26/37
+[2024-06-13T02:31:32.441+0000] {logging_mixin.py:188} INFO - 
+Epoch 26: loss improved from 0.01720 to 0.01656, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:31:32.618+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0166
+[2024-06-13T02:31:32.621+0000] {logging_mixin.py:188} INFO - Epoch 27/37
+[2024-06-13T02:31:37.400+0000] {logging_mixin.py:188} INFO - 
+Epoch 27: loss did not improve from 0.01656
+[2024-06-13T02:31:37.403+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 29ms/step - loss: 0.0168
+[2024-06-13T02:31:37.405+0000] {logging_mixin.py:188} INFO - Epoch 28/37
+[2024-06-13T02:31:41.472+0000] {logging_mixin.py:188} INFO - 
+Epoch 28: loss did not improve from 0.01656
+[2024-06-13T02:31:41.475+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 25ms/step - loss: 0.0172
+[2024-06-13T02:31:41.477+0000] {logging_mixin.py:188} INFO - Epoch 29/37
+[2024-06-13T02:31:45.576+0000] {logging_mixin.py:188} INFO - 
+Epoch 29: loss improved from 0.01656 to 0.01637, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:31:45.795+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0164
+[2024-06-13T02:31:45.799+0000] {logging_mixin.py:188} INFO - Epoch 30/37
+[2024-06-13T02:31:49.867+0000] {logging_mixin.py:188} INFO - 
+Epoch 30: loss improved from 0.01637 to 0.01539, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:31:50.730+0000] {logging_mixin.py:188} INFO - 163/163 - 5s - 30ms/step - loss: 0.0154
+[2024-06-13T02:31:50.736+0000] {logging_mixin.py:188} INFO - Epoch 31/37
+[2024-06-13T02:31:54.824+0000] {logging_mixin.py:188} INFO - 
+Epoch 31: loss did not improve from 0.01539
+[2024-06-13T02:31:54.827+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 25ms/step - loss: 0.0171
+[2024-06-13T02:31:54.830+0000] {logging_mixin.py:188} INFO - Epoch 32/37
+[2024-06-13T02:31:59.099+0000] {logging_mixin.py:188} INFO - 
+Epoch 32: loss did not improve from 0.01539
+[2024-06-13T02:31:59.103+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 26ms/step - loss: 0.0159
+[2024-06-13T02:31:59.105+0000] {logging_mixin.py:188} INFO - Epoch 33/37
+[2024-06-13T02:32:03.189+0000] {logging_mixin.py:188} INFO - 
+Epoch 33: loss did not improve from 0.01539
+[2024-06-13T02:32:03.192+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 25ms/step - loss: 0.0158
+[2024-06-13T02:32:03.194+0000] {logging_mixin.py:188} INFO - Epoch 34/37
+[2024-06-13T02:32:07.308+0000] {logging_mixin.py:188} INFO - 
+Epoch 34: loss did not improve from 0.01539
+[2024-06-13T02:32:07.311+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 25ms/step - loss: 0.0156
+[2024-06-13T02:32:07.314+0000] {logging_mixin.py:188} INFO - Epoch 35/37
+[2024-06-13T02:32:11.196+0000] {logging_mixin.py:188} INFO - 
+Epoch 35: loss did not improve from 0.01539
+[2024-06-13T02:32:11.200+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 24ms/step - loss: 0.0155
+[2024-06-13T02:32:11.203+0000] {logging_mixin.py:188} INFO - Epoch 36/37
+[2024-06-13T02:32:15.292+0000] {logging_mixin.py:188} INFO - 
+Epoch 36: loss did not improve from 0.01539
+[2024-06-13T02:32:15.296+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 25ms/step - loss: 0.0159
+[2024-06-13T02:32:15.298+0000] {logging_mixin.py:188} INFO - Epoch 37/37
+[2024-06-13T02:32:19.294+0000] {logging_mixin.py:188} INFO - 
+Epoch 37: loss improved from 0.01539 to 0.01489, saving model to /opt/***/data/model/save_model.keras
+[2024-06-13T02:32:19.451+0000] {logging_mixin.py:188} INFO - 163/163 - 4s - 25ms/step - loss: 0.0149
+[2024-06-13T02:32:19.458+0000] {python.py:237} INFO - Done. Returned value was: /opt/***/data/model/save_model.keras
+[2024-06-13T02:32:19.460+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-13T02:32:19.510+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_prediction, task_id=train_model_task, run_id=manual__2024-06-13T02:27:53.651829+00:00, execution_date=20240613T022753, start_date=20240613T022923, end_date=20240613T023219
+[2024-06-13T02:32:19.617+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-13T02:32:19.671+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-13T02:32:19.676+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

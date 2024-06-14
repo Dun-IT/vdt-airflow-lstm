@@ -1,0 +1,41 @@
+[2024-06-11T17:51:43.782+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-11T17:51:43.807+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.describe_data_task manual__2024-06-11T17:51:31.335915+00:00 [queued]>
+[2024-06-11T17:51:43.821+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.describe_data_task manual__2024-06-11T17:51:31.335915+00:00 [queued]>
+[2024-06-11T17:51:43.822+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-11T17:51:43.841+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): describe_data_task> on 2024-06-11 17:51:31.335915+00:00
+[2024-06-11T17:51:43.855+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2162) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-11T17:51:43.858+0000] {standard_task_runner.py:63} INFO - Started process 2180 to run task
+[2024-06-11T17:51:43.858+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'describe_data_task', 'manual__2024-06-11T17:51:31.335915+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmpqd22rhvd']
+[2024-06-11T17:51:43.859+0000] {standard_task_runner.py:91} INFO - Job 63: Subtask describe_data_task
+[2024-06-11T17:51:43.921+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.describe_data_task manual__2024-06-11T17:51:31.335915+00:00 [running]> on host ad0cd89ef011
+[2024-06-11T17:51:44.032+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='describe_data_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T17:51:31.335915+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-11T17:51:31.335915+00:00'
+[2024-06-11T17:51:44.053+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-11T17:51:44.075+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-11T17:51:44.082+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/demo_airflow.py", line 48, in describe_data
+    description = df.describe()
+                  ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'describe'
+[2024-06-11T17:51:44.107+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_prediction, task_id=describe_data_task, run_id=manual__2024-06-11T17:51:31.335915+00:00, execution_date=20240611T175131, start_date=20240611T175143, end_date=20240611T175144
+[2024-06-11T17:51:44.124+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 63 for task describe_data_task ('NoneType' object has no attribute 'describe'; 2180)
+[2024-06-11T17:51:44.154+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-11T17:51:44.188+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-11T17:51:44.193+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

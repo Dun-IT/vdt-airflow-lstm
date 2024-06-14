@@ -1,0 +1,72 @@
+[2024-06-13T14:13:59.026+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-13T14:13:59.041+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.test_model_task manual__2024-06-13T14:12:42.057474+00:00 [queued]>
+[2024-06-13T14:13:59.047+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.test_model_task manual__2024-06-13T14:12:42.057474+00:00 [queued]>
+[2024-06-13T14:13:59.047+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-13T14:13:59.056+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): test_model_task> on 2024-06-13 14:12:42.057474+00:00
+[2024-06-13T14:13:59.064+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=19892) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-13T14:13:59.065+0000] {standard_task_runner.py:63} INFO - Started process 19910 to run task
+[2024-06-13T14:13:59.066+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'test_model_task', 'manual__2024-06-13T14:12:42.057474+00:00', '--job-id', '478', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmpvy053i8c']
+[2024-06-13T14:13:59.066+0000] {standard_task_runner.py:91} INFO - Job 478: Subtask test_model_task
+[2024-06-13T14:13:59.096+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.test_model_task manual__2024-06-13T14:12:42.057474+00:00 [running]> on host 33b4ab31339c
+[2024-06-13T14:13:59.154+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='test_model_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T14:12:42.057474+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-13T14:12:42.057474+00:00'
+[2024-06-13T14:13:59.156+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-13T14:13:59.726+0000] {logging_mixin.py:188} INFO -  1/17 ━━━━━━━━━━━━━━━━━━━━ 3s 208ms/step
+[2024-06-13T14:13:59.927+0000] {logging_mixin.py:188} INFO - 17/17 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step 
+[2024-06-13T14:13:59.950+0000] {logging_mixin.py:188} INFO - 17/17 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+[2024-06-13T14:13:59.972+0000] {logging_mixin.py:188} INFO - 521
+[2024-06-13T14:13:59.995+0000] {warnings.py:112} WARNING - /opt/***/dags/demo_***.py:259: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  test_data1['predict'] = y_test_predict  # thêm dữ liệu
+
+[2024-06-13T14:14:00.000+0000] {logging_mixin.py:188} INFO - 2078
+[2024-06-13T14:14:00.000+0000] {logging_mixin.py:188} INFO - 521
+[2024-06-13T14:14:00.005+0000] {logging_mixin.py:188} INFO -               close
+time               
+2014-01-02  36390.0
+2014-01-03  36660.0
+2014-01-06  36660.0
+2014-01-07  36390.0
+2014-01-08  36660.0
+...             ...
+2024-06-07  67800.0
+2024-06-10  67200.0
+2024-06-11  66500.0
+2024-06-12  67000.0
+2024-06-13  66900.0
+
+[2604 rows x 1 columns]
+[2024-06-13T14:14:00.247+0000] {logging_mixin.py:188} INFO - Độ phù hợp tập test: 0.9135357138807644
+[2024-06-13T14:14:00.248+0000] {logging_mixin.py:188} INFO - Sai số tuyệt đối trung bình trên tập test (VNĐ): 869.2845639395393
+[2024-06-13T14:14:00.249+0000] {logging_mixin.py:188} INFO - Phần trăm sai số tuyệt đối trung bình tập test: 0.012497484169633945
+[2024-06-13T14:14:00.258+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-13T14:14:00.260+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/demo_airflow.py", line 291, in test_model
+    next_date = df['time'].iloc[-1] + pd.Timedelta(days=1)
+                ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "Timedelta") to str
+[2024-06-13T14:14:00.267+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_prediction, task_id=test_model_task, run_id=manual__2024-06-13T14:12:42.057474+00:00, execution_date=20240613T141242, start_date=20240613T141359, end_date=20240613T141400
+[2024-06-13T14:14:00.285+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 478 for task test_model_task (can only concatenate str (not "Timedelta") to str; 19910)
+[2024-06-13T14:14:00.323+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-13T14:14:00.349+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-13T14:14:00.351+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

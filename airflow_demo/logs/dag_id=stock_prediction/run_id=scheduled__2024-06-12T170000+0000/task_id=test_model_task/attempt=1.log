@@ -1,0 +1,37 @@
+[2024-06-14T03:46:13.262+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-14T03:46:13.285+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.test_model_task scheduled__2024-06-12T17:00:00+00:00 [queued]>
+[2024-06-14T03:46:13.292+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.test_model_task scheduled__2024-06-12T17:00:00+00:00 [queued]>
+[2024-06-14T03:46:13.293+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-14T03:46:13.304+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): test_model_task> on 2024-06-12 17:00:00+00:00
+[2024-06-14T03:46:13.315+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1000) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-14T03:46:13.318+0000] {standard_task_runner.py:63} INFO - Started process 1018 to run task
+[2024-06-14T03:46:13.317+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'test_model_task', 'scheduled__2024-06-12T17:00:00+00:00', '--job-id', '564', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmp9z3il6pd']
+[2024-06-14T03:46:13.319+0000] {standard_task_runner.py:91} INFO - Job 564: Subtask test_model_task
+[2024-06-14T03:46:13.361+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.test_model_task scheduled__2024-06-12T17:00:00+00:00 [running]> on host 33b4ab31339c
+[2024-06-14T03:46:13.441+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='test_model_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-12T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-12T17:00:00+00:00'
+[2024-06-14T03:46:13.443+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-14T03:46:14.274+0000] {logging_mixin.py:188} INFO -  1/17 ━━━━━━━━━━━━━━━━━━━━ 5s 330ms/step
+[2024-06-14T03:46:14.325+0000] {logging_mixin.py:188} INFO - 12/17 ━━━━━━━━━━━━━━━━━━━━ 0s 5ms/step  
+[2024-06-14T03:46:14.593+0000] {logging_mixin.py:188} INFO - 17/17 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step
+[2024-06-14T03:46:14.595+0000] {logging_mixin.py:188} INFO - 17/17 ━━━━━━━━━━━━━━━━━━━━ 1s 20ms/step
+[2024-06-14T03:46:14.618+0000] {logging_mixin.py:188} INFO - 521
+[2024-06-14T03:46:14.646+0000] {warnings.py:112} WARNING - /opt/***/dags/demo_***.py:261: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  test_data1['predict'] = y_test_predict  # thêm dữ liệu
+
+[2024-06-14T03:46:15.064+0000] {logging_mixin.py:188} INFO - Độ phù hợp tập test: 0.9322620921576323
+[2024-06-14T03:46:15.065+0000] {logging_mixin.py:188} INFO - Sai số tuyệt đối trung bình trên tập test (VNĐ): 766.1552753119001
+[2024-06-14T03:46:15.066+0000] {logging_mixin.py:188} INFO - Phần trăm sai số tuyệt đối trung bình tập test: 0.011110373358752843
+[2024-06-14T03:46:15.137+0000] {logging_mixin.py:188} INFO - 1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 17ms/step
+[2024-06-14T03:46:15.138+0000] {logging_mixin.py:188} INFO - 1/1 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step
+[2024-06-14T03:46:15.147+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-14T03:46:15.148+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-14T03:46:15.157+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_prediction, task_id=test_model_task, run_id=scheduled__2024-06-12T17:00:00+00:00, execution_date=20240612T170000, start_date=20240614T034613, end_date=20240614T034615
+[2024-06-14T03:46:15.185+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-14T03:46:15.207+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-14T03:46:15.210+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

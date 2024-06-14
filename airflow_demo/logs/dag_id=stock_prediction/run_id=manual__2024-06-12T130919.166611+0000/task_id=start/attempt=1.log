@@ -1,0 +1,21 @@
+[2024-06-12T13:09:20.596+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-12T13:09:20.613+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.start manual__2024-06-12T13:09:19.166611+00:00 [queued]>
+[2024-06-12T13:09:20.620+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.start manual__2024-06-12T13:09:19.166611+00:00 [queued]>
+[2024-06-12T13:09:20.621+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-12T13:09:20.634+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): start> on 2024-06-12 13:09:19.166611+00:00
+[2024-06-12T13:09:20.643+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2935) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-12T13:09:20.644+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'start', 'manual__2024-06-12T13:09:19.166611+00:00', '--job-id', '180', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmph5a0v4tk']
+[2024-06-12T13:09:20.645+0000] {standard_task_runner.py:63} INFO - Started process 2953 to run task
+[2024-06-12T13:09:20.645+0000] {standard_task_runner.py:91} INFO - Job 180: Subtask start
+[2024-06-12T13:09:20.680+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.start manual__2024-06-12T13:09:19.166611+00:00 [running]> on host 33b4ab31339c
+[2024-06-12T13:09:20.976+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='start' AIRFLOW_CTX_EXECUTION_DATE='2024-06-12T13:09:19.166611+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-12T13:09:19.166611+00:00'
+[2024-06-12T13:09:20.978+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-12T13:09:20.978+0000] {logging_mixin.py:188} INFO - START
+[2024-06-12T13:09:20.979+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-12T13:09:20.979+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-12T13:09:20.987+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_prediction, task_id=start, run_id=manual__2024-06-12T13:09:19.166611+00:00, execution_date=20240612T130919, start_date=20240612T130920, end_date=20240612T130920
+[2024-06-12T13:09:21.020+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-12T13:09:21.046+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-12T13:09:21.048+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

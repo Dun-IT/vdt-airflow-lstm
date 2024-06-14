@@ -1,0 +1,63 @@
+[2024-06-13T02:47:28.175+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-13T02:47:28.284+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.test_model_task manual__2024-06-13T02:37:31.598833+00:00 [queued]>
+[2024-06-13T02:47:28.307+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.test_model_task manual__2024-06-13T02:37:31.598833+00:00 [queued]>
+[2024-06-13T02:47:28.309+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-06-13T02:47:28.347+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): test_model_task> on 2024-06-13 02:37:31.598833+00:00
+[2024-06-13T02:47:28.373+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=4630) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-13T02:47:28.377+0000] {standard_task_runner.py:63} INFO - Started process 4648 to run task
+[2024-06-13T02:47:28.377+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'test_model_task', 'manual__2024-06-13T02:37:31.598833+00:00', '--job-id', '322', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmp1i53h9kb']
+[2024-06-13T02:47:28.380+0000] {standard_task_runner.py:91} INFO - Job 322: Subtask test_model_task
+[2024-06-13T02:47:28.476+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.test_model_task manual__2024-06-13T02:37:31.598833+00:00 [running]> on host 33b4ab31339c
+[2024-06-13T02:47:28.703+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='test_model_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T02:37:31.598833+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-13T02:37:31.598833+00:00'
+[2024-06-13T02:47:28.706+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-13T02:47:31.012+0000] {logging_mixin.py:188} INFO -  1/82 ━━━━━━━━━━━━━━━━━━━━ 1:04 795ms/step
+[2024-06-13T02:47:31.062+0000] {logging_mixin.py:188} INFO -  4/82 ━━━━━━━━━━━━━━━━━━━━ 1s 17ms/step   
+[2024-06-13T02:47:31.114+0000] {logging_mixin.py:188} INFO -  8/82 ━━━━━━━━━━━━━━━━━━━━ 1s 15ms/step
+[2024-06-13T02:47:31.167+0000] {logging_mixin.py:188} INFO - 12/82 ━━━━━━━━━━━━━━━━━━━━ 0s 14ms/step
+[2024-06-13T02:47:31.226+0000] {logging_mixin.py:188} INFO - 17/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.285+0000] {logging_mixin.py:188} INFO - 22/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.347+0000] {logging_mixin.py:188} INFO - 27/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.409+0000] {logging_mixin.py:188} INFO - 31/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.464+0000] {logging_mixin.py:188} INFO - 35/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.519+0000] {logging_mixin.py:188} INFO - 39/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.578+0000] {logging_mixin.py:188} INFO - 44/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.632+0000] {logging_mixin.py:188} INFO - 49/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.682+0000] {logging_mixin.py:188} INFO - 54/82 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step
+[2024-06-13T02:47:31.735+0000] {logging_mixin.py:188} INFO - 59/82 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step
+[2024-06-13T02:47:31.787+0000] {logging_mixin.py:188} INFO - 64/82 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step
+[2024-06-13T02:47:31.839+0000] {logging_mixin.py:188} INFO - 69/82 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step
+[2024-06-13T02:47:31.891+0000] {logging_mixin.py:188} INFO - 74/82 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step
+[2024-06-13T02:47:31.944+0000] {logging_mixin.py:188} INFO - 79/82 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step
+[2024-06-13T02:47:32.601+0000] {logging_mixin.py:188} INFO - 82/82 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step
+[2024-06-13T02:47:32.603+0000] {logging_mixin.py:188} INFO - 82/82 ━━━━━━━━━━━━━━━━━━━━ 2s 20ms/step
+[2024-06-13T02:47:32.735+0000] {logging_mixin.py:188} INFO - Shape of test data before loop: (5, 1)
+[2024-06-13T02:47:32.737+0000] {logging_mixin.py:188} INFO - Shape of sc_test: (5, 1)
+[2024-06-13T02:47:32.739+0000] {logging_mixin.py:188} INFO - x_test shape before reshaping: (0,)
+[2024-06-13T02:47:32.740+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-13T02:47:32.742+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/demo_airflow.py", line 285, in test_model
+    raise ValueError("x_test is empty, check the loop that populates x_test")
+ValueError: x_test is empty, check the loop that populates x_test
+[2024-06-13T02:47:32.776+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=stock_prediction, task_id=test_model_task, run_id=manual__2024-06-13T02:37:31.598833+00:00, execution_date=20240613T023731, start_date=20240613T024728, end_date=20240613T024732
+[2024-06-13T02:47:32.812+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 322 for task test_model_task (x_test is empty, check the loop that populates x_test; 4648)
+[2024-06-13T02:47:32.898+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-13T02:47:32.956+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-13T02:47:32.965+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

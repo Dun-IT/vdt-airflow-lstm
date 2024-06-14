@@ -1,0 +1,47 @@
+[2024-06-11T17:03:53.361+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-11T17:03:53.375+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.update_data manual__2024-06-11T17:03:46.309524+00:00 [queued]>
+[2024-06-11T17:03:53.379+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.update_data manual__2024-06-11T17:03:46.309524+00:00 [queued]>
+[2024-06-11T17:03:53.380+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-11T17:03:53.390+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): update_data> on 2024-06-11 17:03:46.309524+00:00
+[2024-06-11T17:03:53.396+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1309) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-11T17:03:53.397+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'update_data', 'manual__2024-06-11T17:03:46.309524+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmp53ujs21m']
+[2024-06-11T17:03:53.397+0000] {standard_task_runner.py:63} INFO - Started process 1327 to run task
+[2024-06-11T17:03:53.398+0000] {standard_task_runner.py:91} INFO - Job 51: Subtask update_data
+[2024-06-11T17:03:53.430+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.update_data manual__2024-06-11T17:03:46.309524+00:00 [running]> on host ad0cd89ef011
+[2024-06-11T17:03:53.490+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='update_data' AIRFLOW_CTX_EXECUTION_DATE='2024-06-11T17:03:46.309524+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-11T17:03:46.309524+00:00'
+[2024-06-11T17:03:53.492+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-11T17:03:53.507+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-11T17:03:53.508+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/demo_airflow.py", line 46, in update_data
+    new_data = vnstock.stock_historical_data(symbol=stock_code, start_date=start_date, end_date=end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/vnstock/technical.py", line 24, in stock_historical_data
+    df = ohlc_data(symbol, start_date, end_date, resolution, type, headers=entrade_headers)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/vnstock/technical.py", line 155, in ohlc_data
+    end_date = (datetime.strptime(end_date, '%Y-%m-%d') + timedelta(days=1)).strftime('%Y-%m-%d')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not datetime.date
+[2024-06-11T17:03:53.516+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_prediction, task_id=update_data, run_id=manual__2024-06-11T17:03:46.309524+00:00, execution_date=20240611T170346, start_date=20240611T170353, end_date=20240611T170353
+[2024-06-11T17:03:53.525+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 51 for task update_data (strptime() argument 1 must be str, not datetime.date; 1327)
+[2024-06-11T17:03:53.531+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-11T17:03:53.546+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-11T17:03:53.548+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

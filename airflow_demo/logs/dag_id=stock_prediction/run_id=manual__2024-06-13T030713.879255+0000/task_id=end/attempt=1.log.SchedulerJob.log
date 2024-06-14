@@ -1,0 +1,1 @@
+[2024-06-13T03:07:50.109+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: stock_prediction.end manual__2024-06-13T03:07:13.879255+00:00 [queued]> finished (success) although the task says it's queued. (Info: None) Was the task killed externally?

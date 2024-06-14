@@ -1,0 +1,43 @@
+[2024-06-13T03:07:49.047+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-13T03:07:49.147+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_prediction.test_model_task manual__2024-06-13T03:07:13.879255+00:00 [queued]>
+[2024-06-13T03:07:49.189+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_prediction.test_model_task manual__2024-06-13T03:07:13.879255+00:00 [queued]>
+[2024-06-13T03:07:49.195+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-06-13T03:07:49.259+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): test_model_task> on 2024-06-13 03:07:13.879255+00:00
+[2024-06-13T03:07:49.299+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=6949) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-13T03:07:49.310+0000] {standard_task_runner.py:63} INFO - Started process 7109 to run task
+[2024-06-13T03:07:49.303+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_prediction', 'test_model_task', 'manual__2024-06-13T03:07:13.879255+00:00', '--job-id', '341', '--raw', '--subdir', 'DAGS_FOLDER/demo_***.py', '--cfg-path', '/tmp/tmpyl648jvk']
+[2024-06-13T03:07:49.315+0000] {standard_task_runner.py:91} INFO - Job 341: Subtask test_model_task
+[2024-06-13T03:07:49.516+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_prediction.test_model_task manual__2024-06-13T03:07:13.879255+00:00 [running]> on host 33b4ab31339c
+[2024-06-13T03:07:49.910+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Nguyen Khoa Doan' AIRFLOW_CTX_DAG_ID='stock_prediction' AIRFLOW_CTX_TASK_ID='test_model_task' AIRFLOW_CTX_EXECUTION_DATE='2024-06-13T03:07:13.879255+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-13T03:07:13.879255+00:00'
+[2024-06-13T03:07:49.914+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-13T03:07:49.943+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-13T03:07:49.945+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/demo_airflow.py", line 227, in test_model
+    final_model = load_model(save_model_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/keras/src/saving/saving_api.py", line 193, in load_model
+    raise ValueError(
+ValueError: File format not supported: filepath=None. Keras 3 only supports V3 `.keras` files and legacy H5 format files (`.h5` extension). Note that the legacy SavedModel format is not supported by `load_model()` in Keras 3. In order to reload a TensorFlow SavedModel as an inference-only layer in Keras 3, use `keras.layers.TFSMLayer(None, call_endpoint='serving_default')` (note that your `call_endpoint` might have a different name).
+[2024-06-13T03:07:49.985+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_prediction, task_id=test_model_task, run_id=manual__2024-06-13T03:07:13.879255+00:00, execution_date=20240613T030713, start_date=20240613T030749, end_date=20240613T030749
+[2024-06-13T03:07:50.029+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 341 for task test_model_task (File format not supported: filepath=None. Keras 3 only supports V3 `.keras` files and legacy H5 format files (`.h5` extension). Note that the legacy SavedModel format is not supported by `load_model()` in Keras 3. In order to reload a TensorFlow SavedModel as an inference-only layer in Keras 3, use `keras.layers.TFSMLayer(None, call_endpoint='serving_default')` (note that your `call_endpoint` might have a different name).; 7109)
+[2024-06-13T03:07:50.061+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-06-13T03:07:50.109+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-13T03:07:50.113+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
