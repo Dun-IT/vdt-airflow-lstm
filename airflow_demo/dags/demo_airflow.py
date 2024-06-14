@@ -317,9 +317,9 @@ def test_model(**kwargs):
 
 
 def send_email():
-    sender_email = "airflow.vdt2024@gmail.com"
-    receiver_email = "doansvn1405@gmail.com"
-    password = "agoa emgo hblq liqq"
+    sender_email = "xxxxxx.vdt2024@gmail.com"
+    receiver_email = "xxxxxxx1405@gmail.com"
+    password = "xxxx xxxx xxxx xxxx"
     subject = "REPORT FROM AIRFLOW"
 
     # Nội dung HTML của email
